@@ -117,7 +117,9 @@ class EnvironmentController extends Controller
 
         event(new EnvironmentSaved($request));
 
-        return $redirect->route('LaravelInstaller::database', ['email' => $request->admin_email, 'password' => $request->admin_password])
+        return $redirect->route('LaravelInstaller::database', 
+                        ['email' => $request->admin_email, 
+                        'password' => $request->admin_password])
                         ->with(['results' => $results]);
     }
 

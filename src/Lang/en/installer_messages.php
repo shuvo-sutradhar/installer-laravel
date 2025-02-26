@@ -124,6 +124,9 @@ return [
                 'db_username_placeholder' => 'Database User Name',
                 'db_password_label' => 'Database Password',
                 'db_password_placeholder' => 'Database Password',
+                'db_password_placeholder' => 'Database Password',
+                'admin_email' => 'Admin Email',
+                'admin_password' => 'Admin Password',
 
                 'app_tabs' => [
                     'more_info' => 'More Info',
