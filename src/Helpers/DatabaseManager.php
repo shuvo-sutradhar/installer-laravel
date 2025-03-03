@@ -7,6 +7,7 @@ use Illuminate\Database\SQLiteConnection;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 use Symfony\Component\Console\Output\BufferedOutput;
 
 class DatabaseManager
@@ -20,22 +21,24 @@ class DatabaseManager
     {
         $outputLog = new BufferedOutput;
 
+        // Fix MySQL Index Length Issue
+        Schema::defaultStringLength(191);
+
+        // Force MySQL to Use InnoDB
+        $this->forceInnoDB();
+
+        // Handle SQLite
         $this->sqlite($outputLog);
 
         return $this->migrate($outputLog);
     }
 
-    public function passportInstall()
+    /**
+     * Force MySQL to Use InnoDB Storage Engine.
+     */
+    private function forceInnoDB()
     {
-        $outputLog = new BufferedOutput;
-        try {
-            Artisan::call('passport:install',[], $outputLog);
-        }
-        catch(Exception $e) {
-            return $this->response($e->getMessage(), 'error', $outputLog);
-        }
-
-        return $this->migrate($outputLog);
+        DB::statement('SET default_storage_engine=InnoDB');
     }
 
     /**
@@ -47,7 +50,7 @@ class DatabaseManager
     private function migrate(BufferedOutput $outputLog)
     {
         try {
-            Artisan::call('migrate:fresh', ['--force'=> true], $outputLog);
+            Artisan::call('migrate:fresh', ['--force' => true], $outputLog);
         } catch (Exception $e) {
             return $this->response($e->getMessage(), 'error', $outputLog);
         }
@@ -98,11 +101,11 @@ class DatabaseManager
     {
         if (DB::connection() instanceof SQLiteConnection) {
             $database = DB::connection()->getDatabaseName();
-            if (! file_exists($database)) {
+            if (!file_exists($database)) {
                 touch($database);
                 DB::reconnect(Config::get('database.default'));
             }
-            $outputLog->write('Using SqlLite database: '.$database, 1);
+            $outputLog->write('Using SQLite database: ' . $database, 1);
         }
     }
 }

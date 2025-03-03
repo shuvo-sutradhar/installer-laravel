@@ -85,6 +85,8 @@ return [
                 'mail_username'         => 'required|string|max:50',
                 'mail_password'         => 'required|string|max:50',
                 'mail_encryption'       => 'required|string|max:50',
+                'database_username'     => 'required|string',
+                'database_password'     => 'required|string',
                 'pusher_app_id'         => 'max:50',
                 'pusher_app_key'        => 'max:50',
                 'pusher_app_secret'     => 'max:50',

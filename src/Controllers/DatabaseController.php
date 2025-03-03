@@ -31,7 +31,7 @@ class DatabaseController extends Controller
         }
 
         // Run passport install (if required)
-        $this->databaseManager->passportInstall();
+        // $this->databaseManager->passportInstall();
 
         // Create Super Admin User
         User::create([
