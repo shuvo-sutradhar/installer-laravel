@@ -1,9 +1,9 @@
 <?php
 
-namespace SdTech\ProjectInstaller\Controllers;
+namespace Codeshaper\ProjectInstaller\Controllers;
 
 use Illuminate\Routing\Controller;
-use SdTech\ProjectInstaller\Helpers\RequirementsChecker;
+use Codeshaper\ProjectInstaller\Helpers\RequirementsChecker;
 
 class RequirementsController extends Controller
 {

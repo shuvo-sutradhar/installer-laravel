@@ -1,6 +1,6 @@
 <?php
 
-namespace SdTech\ProjectInstaller\Controllers;
+namespace Codeshaper\ProjectInstaller\Controllers;
 
 use Exception;
 use Illuminate\Http\Request;
@@ -11,8 +11,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
-use SdTech\ProjectInstaller\Events\EnvironmentSaved;
-use SdTech\ProjectInstaller\Helpers\EnvironmentManager;
+use Codeshaper\ProjectInstaller\Events\EnvironmentSaved;
+use Codeshaper\ProjectInstaller\Helpers\EnvironmentManager;
 
 class EnvironmentController extends Controller
 {

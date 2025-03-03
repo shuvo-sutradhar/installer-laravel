@@ -1,5 +1,5 @@
 {
-    "name": "sdtech/project-installer",
+    "name": "shuvo-sutradhar/installer-laravel",
     "description": "Simple Laravel web installer with codecanyon product validation",
     "license": "MIT",
     "minimum-stability": "dev",
@@ -11,24 +11,24 @@
         }
     ],
     "require": {
-        "php": ">=7.0.0"
+        "php": "^8.0",
+        "laravel/framework": "^8.0|^9.0|^10.0|^11.0"
     },
     "autoload": {
         "psr-4": {
-            "SdTech\\ProjectInstaller\\": "src/"
+            "Codeshaper\\ProjectInstaller\\": "src/"
         },
         "files": [
             "src/Helpers/functions.php"
         ]
     },
-
     "config": {
         "sort-packages": true
     },
     "extra": {
         "laravel": {
             "providers": [
-                "SdTech\\ProjectInstaller\\Providers\\ProjectInstallerServiceProvider"
+                "Codeshaper\\ProjectInstaller\\Providers\\ProjectInstallerServiceProvider"
             ]
         }
     }

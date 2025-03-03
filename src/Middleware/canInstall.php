@@ -1,6 +1,6 @@
 <?php
 
-namespace SdTech\ProjectInstaller\Middleware;
+namespace Codeshaper\ProjectInstaller\Middleware;
 
 use Closure;
 use Redirect;

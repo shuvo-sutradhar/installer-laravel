@@ -1,6 +1,6 @@
 <?php
 
-namespace SdTech\ProjectInstaller\Helpers;
+namespace Codeshaper\ProjectInstaller\Helpers;
 
 use Exception;
 use Illuminate\Database\SQLiteConnection;

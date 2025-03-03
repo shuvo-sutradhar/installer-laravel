@@ -1,6 +1,6 @@
 <?php
 
-namespace SdTech\ProjectInstaller\Events;
+namespace Codeshaper\ProjectInstaller\Events;
 
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Foundation\Events\Dispatchable;

@@ -3,7 +3,7 @@
 Route::get('test', function () {
    dd('tested');
 });
-Route::group(['prefix' => 'install', 'as' => 'LaravelInstaller::', 'namespace' => 'SdTech\ProjectInstaller\Controllers', 'middleware' => ['web', 'install']], function () {
+Route::group(['prefix' => 'install', 'as' => 'LaravelInstaller::', 'namespace' => 'Codeshaper\ProjectInstaller\Controllers', 'middleware' => ['web', 'install']], function () {
     Route::get('/', [
         'as' => 'welcome',
         'uses' => 'WelcomeController@welcome',
@@ -66,7 +66,7 @@ Route::group(['prefix' => 'install', 'as' => 'LaravelInstaller::', 'namespace' =
 
 });
 
-Route::group(['prefix' => 'update', 'as' => 'LaravelUpdater::', 'namespace' => 'SdTech\ProjectInstaller\Controllers', 'middleware' => 'web'], function () {
+Route::group(['prefix' => 'update', 'as' => 'LaravelUpdater::', 'namespace' => 'Codeshaper\ProjectInstaller\Controllers', 'middleware' => 'web'], function () {
     Route::group(['middleware' => 'update'], function () {
         Route::get('/', [
             'as' => 'welcome',

@@ -1,12 +1,12 @@
 <?php
 
-namespace SdTech\ProjectInstaller\Middleware;
+namespace Codeshaper\ProjectInstaller\Middleware;
 
 use Closure;
 
 class canUpdate
 {
-    use \SdTech\ProjectInstaller\Helpers\MigrationsHelper;
+    use \Codeshaper\ProjectInstaller\Helpers\MigrationsHelper;
 
     /**
      * Handle an incoming request.

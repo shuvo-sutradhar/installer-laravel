@@ -1,13 +1,13 @@
 <?php
 
-namespace SdTech\ProjectInstaller\Controllers;
+namespace Codeshaper\ProjectInstaller\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User; // Ensure this is the correct namespace for your User model
-use SdTech\ProjectInstaller\Helpers\DatabaseManager;
-use SdTech\ProjectInstaller\Events\AddingInstallerSuperAdmin;
+use Codeshaper\ProjectInstaller\Helpers\DatabaseManager;
+use Codeshaper\ProjectInstaller\Events\AddingInstallerSuperAdmin;
 
 class DatabaseController extends Controller
 {

@@ -1,14 +1,14 @@
 <?php
 
-namespace SdTech\ProjectInstaller\Controllers;
+namespace Codeshaper\ProjectInstaller\Controllers;
 
 use Illuminate\Routing\Controller;
-use SdTech\ProjectInstaller\Helpers\DatabaseManager;
-use SdTech\ProjectInstaller\Helpers\InstalledFileManager;
+use Codeshaper\ProjectInstaller\Helpers\DatabaseManager;
+use Codeshaper\ProjectInstaller\Helpers\InstalledFileManager;
 
 class UpdateController extends Controller
 {
-    use \SdTech\ProjectInstaller\Helpers\MigrationsHelper;
+    use \Codeshaper\ProjectInstaller\Helpers\MigrationsHelper;
 
     /**
      * Display the updater welcome page.

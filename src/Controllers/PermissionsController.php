@@ -1,13 +1,13 @@
 <?php
 
-namespace SdTech\ProjectInstaller\Controllers;
+namespace Codeshaper\ProjectInstaller\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Validator;
-use SdTech\ProjectInstaller\Helpers\PermissionsChecker;
+use Codeshaper\ProjectInstaller\Helpers\PermissionsChecker;
 use Exception;
 
 class PermissionsController extends Controller

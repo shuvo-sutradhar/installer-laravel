@@ -1,14 +1,14 @@
 <?php
 
-namespace SdTech\ProjectInstaller\Providers;
+namespace Codeshaper\ProjectInstaller\Providers;
 
 use Illuminate\Auth\CreatesUserProviders;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
-use SdTech\ProjectInstaller\Helpers\SdTechGuard;
-use SdTech\ProjectInstaller\Middleware\canInstall;
-use SdTech\ProjectInstaller\Middleware\canUpdate;
+use Codeshaper\ProjectInstaller\Helpers\CodeshaperGuard;
+use Codeshaper\ProjectInstaller\Middleware\canInstall;
+use Codeshaper\ProjectInstaller\Middleware\canUpdate;
 
 class ProjectInstallerServiceProvider extends ServiceProvider
 {
@@ -28,10 +28,10 @@ class ProjectInstallerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        Auth::extend('sdtech', function ($app, $name, $config) {
+        Auth::extend('Codeshaper', function ($app, $name, $config) {
             $provider = $this->createUserProvider($config['provider'] ?? null);
 
-            $guard = new SdTechGuard($name, $provider, $app['session.store']);
+            $guard = new CodeshaperGuard($name, $provider, $app['session.store']);
 
             // When using the remember me functionality of the authentication services we
             // will need to be set the encryption instance of the guard, which allows

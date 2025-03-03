@@ -8,7 +8,7 @@
 - Add in `composer.json`
 ```json
 "require": {
-	"sdtech/project-installer": "dev-main",
+	"Codeshaper/project-installer": "dev-main",
 },
 ```
 - Add vcs url for this package to your `composer.json` file:
@@ -21,7 +21,7 @@
         }
     },
 ```
-- Run `composer update sdtech/project-installe` to install the package.
+- Run `composer update Codeshaper/project-installe` to install the package.
 
 - Run `php artisan vendor:publish --tag=projectinstaller` to publish the assets.
 

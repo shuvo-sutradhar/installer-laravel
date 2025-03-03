@@ -1,10 +1,10 @@
 <?php
 
-namespace SdTech\ProjectInstaller\Helpers;
+namespace Codeshaper\ProjectInstaller\Helpers;
 
 use Illuminate\Auth\SessionGuard;
 
-class SdTechGuard extends SessionGuard
+class CodeshaperGuard extends SessionGuard
 {
     public function attempt(array $credentials = [], $remember = false)
     {

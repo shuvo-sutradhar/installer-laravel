@@ -1,6 +1,6 @@
 <?php
 
-namespace SdTech\ProjectInstaller\Controllers;
+namespace Codeshaper\ProjectInstaller\Controllers;
 
 use Illuminate\Routing\Controller;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace SdTech\ProjectInstaller\Helpers;
+namespace Codeshaper\ProjectInstaller\Helpers;
 
 class RequirementsChecker
 {

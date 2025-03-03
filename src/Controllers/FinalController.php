@@ -1,12 +1,12 @@
 <?php
 
-namespace SdTech\ProjectInstaller\Controllers;
+namespace Codeshaper\ProjectInstaller\Controllers;
 
 use Illuminate\Routing\Controller;
-use SdTech\ProjectInstaller\Events\LaravelInstallerFinished;
-use SdTech\ProjectInstaller\Helpers\EnvironmentManager;
-use SdTech\ProjectInstaller\Helpers\FinalInstallManager;
-use SdTech\ProjectInstaller\Helpers\InstalledFileManager;
+use Codeshaper\ProjectInstaller\Events\LaravelInstallerFinished;
+use Codeshaper\ProjectInstaller\Helpers\EnvironmentManager;
+use Codeshaper\ProjectInstaller\Helpers\FinalInstallManager;
+use Codeshaper\ProjectInstaller\Helpers\InstalledFileManager;
 
 class FinalController extends Controller
 {
@@ -18,9 +18,9 @@ class FinalController extends Controller
     /**
      * Update installed file and display finished view.
      *
-     * @param \SdTech\ProjectInstaller\Helpers\InstalledFileManager $fileManager
-     * @param \SdTech\ProjectInstaller\Helpers\FinalInstallManager $finalInstall
-     * @param \SdTech\ProjectInstaller\Helpers\EnvironmentManager $environment
+     * @param \Codeshaper\ProjectInstaller\Helpers\InstalledFileManager $fileManager
+     * @param \Codeshaper\ProjectInstaller\Helpers\FinalInstallManager $finalInstall
+     * @param \Codeshaper\ProjectInstaller\Helpers\EnvironmentManager $environment
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function finish(InstalledFileManager $fileManager, FinalInstallManager $finalInstall, EnvironmentManager $environment)
