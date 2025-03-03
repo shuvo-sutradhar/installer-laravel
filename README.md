@@ -1,65 +1,43 @@
-# installer-laravel | A Simple Laravel Project Installer with verify envato purchase licence
-
-[![Latest Version](https://img.shields.io/github/release/syedbacchu/installer-laravel.svg?style=flat-square)](https://github.com/syedbacchu/installer-laravel/releases)
-[![Issues](https://img.shields.io/github/issues/syedbacchu/installer-laravel.svg?style=flat-square)](https://github.com/syedbacchu/installer-laravel)
-[![Stars](https://img.shields.io/github/stars/syedbacchu/installer-laravel.svg?style=social)](https://github.com/syedbacchu/installer-laravel)
-[![Stars](https://img.shields.io/github/forks/syedbacchu/installer-laravel?style=flat-square)](https://github.com/syedbacchu/installer-laravel)
-[![Total Downloads](https://img.shields.io/packagist/dt/sdtech/project-installer.svg?style=flat-square)](https://packagist.org/packages/sdtech/project-installer)
-
-- [About](#about)
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Uses](#Uses)
-
-## About
-
-A simple laravel project installer with verify envato product licence which gives you a nice interface to setup your project, verify product, database and other configuration just by following the setup wizard.
-The current features are :
-
-- Check For Server Requirements.
-- Check For Folders Permissions.
-- Verify Envato purchase licence.
-- Ability to set database information with a simple form wizard.
-- Migrate The Database.
-- Seed The Tables.
 
 ## Requirements
 
-* [Laravel 5.5+](https://laravel.com/docs/installation)
+* [Laravel 11+]
 
 ## Installation
-1. From your projects root folder in terminal run:
 
-```bash
-    composer require sdtech/project-installer
+- Add in `composer.json`
+```json
+"require": {
+	"sdtech/project-installer": "dev-main",
+},
 ```
-2. Publish the packages views, config file, assets, and language files by running the following from your projects root folder:
+- Add vcs url for this package to your `composer.json` file:
 
-```bash
-    php artisan vendor:publish --tag=projectinstaller
+```json
+"repositories": {
+        {
+            "type": "vcs",
+            "url": "git@github.com:shuvo-sutradhar/installer-laravel"
+        }
+    },
 ```
+- Run `composer update sdtech/project-installe` to install the package.
 
-## configuration
-1. Go to your config folder, then open "installer.php" file
-2. Search here "env_path", under this change the "env_token" => 'change this value and set it your codecanyon token' .
-3. 
- ``` bash
+- Run `php artisan vendor:publish --tag=projectinstaller` to publish the assets.
+
+  
+```
 'env_path' => [
-   'env_token' => 'your envato token here',
-   'env_url_path' => 'https://api.envato.com/v1/market/private/user/verify-purchase:'
-   ]
-   ```
-5. Another thing , verify purchase key is not mandatory, you can also manage this from config file->
-6. 
-```bash
-'checkPurchaseCode' => true, 
+  'env_token' => 'your envato token here',
+  'env_url_path' => 'https://api.envato.com/v1/market/private/user/verify-purchase:'
+  ]
 ```
- [true means verify purchase key mandatory, and false means not mandatory]
 
-## Uses
-1. Make a middleware and inside the middleware the code look like ->
-```bash
+- 'checkPurchaseCode' => true, 
+
+- Wrap all your routes in `['is_verified', 'need_to_install']` middleware. For example:
+
+```php
 public function handle(Request $request, Closure $next)
     {
         if (file_exists(storage_path('installed'))) {
@@ -69,6 +47,29 @@ public function handle(Request $request, Closure $next)
         return redirect(url('install'));
     }
 ```
-2. Then add the middleware name to your route.
 
-That's it :-)
+- Run `php artisan optimize:clear`.
+
+## Screenshots
+
+###### Installer
+![Laravel web installer | Step 1](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/install/1-welcome.jpg)
+![Laravel web installer | Step 2](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/install/2-requirements.jpg)
+![Laravel web installer | Step 3](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/install/3-permissions.jpg)
+![Laravel web installer | Step 4 Menu](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/install/4-environment.jpg)
+![Laravel web installer | Step 4 Classic](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/install/4a-environment-classic.jpg)
+![Laravel web installer | Step 4 Wizard 1](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/install/4b-environment-wizard-1.jpg)
+![Laravel web installer | Step 4 Wizard 2](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/install/4b-environment-wizard-2.jpg)
+![Laravel web installer | Step 4 Wizard 3](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/install/4b-environment-wizard-3.jpg)
+![Laravel web installer | Step 5](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/install/5-final.jpg)
+
+###### Updater
+![Laravel web updater | Step 1](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/update/1-welcome.jpg)
+![Laravel web updater | Step 2](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/update/2-updates.jpg)
+![Laravel web updater | Step 3](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/update/3-finished.jpg)
+
+## License
+
+Laravel Web Installer is licensed under the MIT license. Enjoy!
+
+
