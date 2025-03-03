@@ -5,6 +5,11 @@
 
 ## Installation
 
+composer require shuvo-sutradhar/installer-laravel
+
+php artisan vendor:publish --provider="Codeshaper\ProjectInstaller\Providers\ProjectInstallerServiceProvider"
+
+
 - Add in `composer.json`
 ```json
 "require": {
