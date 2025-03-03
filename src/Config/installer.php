@@ -138,7 +138,7 @@ return [
     */
     'checkPurchaseCode' => true,
     'demoPurchaseCodeAllow' => true,
-    'demoPurchaseCode' => 'itsademopurchasecodeonlyfortestpurpose',
+    'demoPurchaseCode' => 'demo@123',
     'updaterEnabled' => 'true',
 
     'updater_url' => '',

@@ -55,10 +55,10 @@
                     {{ trans('installer_messages.environment.wizard.form.app_environment_label') }}
                 </label>
                 <select name="environment" id="environment" onchange='checkEnvironment(this.value);'>
-                    <option value="local" selected>{{ trans('installer_messages.environment.wizard.form.app_environment_label_local') }}</option>
+                    <option value="production" selected>{{ trans('installer_messages.environment.wizard.form.app_environment_label_production') }}</option>
+                    <option value="local">{{ trans('installer_messages.environment.wizard.form.app_environment_label_local') }}</option>
                     <option value="development">{{ trans('installer_messages.environment.wizard.form.app_environment_label_developement') }}</option>
                     <option value="qa">{{ trans('installer_messages.environment.wizard.form.app_environment_label_qa') }}</option>
-                    <option value="production">{{ trans('installer_messages.environment.wizard.form.app_environment_label_production') }}</option>
                     <option value="other">{{ trans('installer_messages.environment.wizard.form.app_environment_label_other') }}</option>
                 </select>
                 <div id="environment_text_input" style="display: none;">
@@ -76,13 +76,13 @@
                 <label for="app_debug">
                     {{ trans('installer_messages.environment.wizard.form.app_debug_label') }}
                 </label>
-                <label for="app_debug_true">
-                    <input type="radio" name="app_debug" id="app_debug_true" value=true checked />
-                    {{ trans('installer_messages.environment.wizard.form.app_debug_label_true') }}
-                </label>
                 <label for="app_debug_false">
-                    <input type="radio" name="app_debug" id="app_debug_false" value=false />
+                    <input type="radio" name="app_debug" id="app_debug_false" value=false checked />
                     {{ trans('installer_messages.environment.wizard.form.app_debug_label_false') }}
+                </label>
+                <label for="app_debug_true">
+                    <input type="radio" name="app_debug" id="app_debug_true" value=true  />
+                    {{ trans('installer_messages.environment.wizard.form.app_debug_label_true') }}
                 </label>
                 @if ($errors->has('app_debug'))
                 <span class="error-block">
